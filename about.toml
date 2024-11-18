@@ -1,0 +1,4 @@
+accepted = [
+    "Apache-2.0",
+]
+no-clearly-defined = true

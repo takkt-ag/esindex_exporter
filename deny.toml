@@ -1,0 +1,16 @@
+[licenses]
+confidence-threshold = 0.93
+allow = [
+    "Apache-2.0",
+]
+
+[bans]
+wildcards = "deny"
+multiple-versions = "warn"
+
+[sources]
+unknown-registry = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+
+unknown-git = "deny"
+allow-git = []
