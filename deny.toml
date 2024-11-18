@@ -2,6 +2,14 @@
 confidence-threshold = 0.93
 allow = [
     "Apache-2.0",
+    "BSD-3-Clause",
+    "MIT",
+    "Unicode-3.0",
+]
+
+exceptions = [
+    # Unicode-DFS-2016 is a permissive license, if attribution in associated documentation is provided
+    { allow = ["Unicode-DFS-2016"], crate = "unicode-ident" },
 ]
 
 [bans]

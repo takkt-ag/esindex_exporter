@@ -1,5 +1,20 @@
 # esindex_exporter
 
+This is a very simple Prometheus exporter, used for gathering metrics about groups of Elasticsearch (or OpenSearch) indices.
+
+The following statistics are gathered:
+
+| Metric                          | Description                                                  |
+|---------------------------------|--------------------------------------------------------------|
+| `esindex_grouped_indexes_total` | Number of indexes in group                                   |
+| `esindex_store_bytes`           | Total stored size of group in bytes                          |
+| `esindex_pri_store_bytes`       | Total primary stored size of group in bytes                  |
+| `esindex_sec_store_bytes`       | Total secondary (all replicas) stored size of group in bytes |
+| `esindex_docs_count_total`      | Total number of documents in group                           |
+| `esindex_docs_deleted_total`    | Total number of deleted documents in group                   |
+
+Each metric is labeled with the group name, as the `group` label.
+
 ## License
 
 esindex_exporter is licensed under the Apache License, Version 2.0, (see [LICENSE](LICENSE) or <https://www.apache.org/licenses/LICENSE-2.0>).
