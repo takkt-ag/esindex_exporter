@@ -115,7 +115,7 @@ jobs:
       uses: actions-rs/cargo@v1
       with:
         command: run
-        args: -- --config-file esindex_exporter.example.yaml --only-lint-config-file
+        args: --release -- --config-file esindex_exporter.example.yaml --only-lint-config-file
 
   build-docker-image:
     permissions:
