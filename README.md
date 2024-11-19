@@ -86,7 +86,7 @@ prometheus_exporter_request_duration_seconds_count 1
 prometheus_exporter_requests_total 1
 ```
 
-The `prometheus_exporter_` prefixed metrics are metric internal to the exporter, which the library we use provides automatically. The `esindex_` metrics are "ours", as documented in the README.
+The `prometheus_exporter_` prefixed metrics are internal to the exporter, which the library we use provides automatically. The `esindex_` metrics are "ours", as documented in the README.
 
 ## License
 
