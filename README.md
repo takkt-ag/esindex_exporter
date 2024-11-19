@@ -15,6 +15,92 @@ The following statistics are gathered:
 
 Each metric is labeled with the group name, as the `group` label.
 
+## Building
+
+To build the project, you need to have Rust installed.
+You can install Rust by following the instructions at <https://www.rust-lang.org/tools/install>.
+
+Once you have Rust installed, you can build the project by running the following command:
+
+```sh
+cargo build --release
+```
+
+The built binary will be available at `target/release/esindex_exporter`.
+
+## Example
+
+Given you got a series of indices for your application loadbalancers' access logs,
+which are prefixed with the environment name and suffixed with some form of date (`integration-alb.access-2024.11.19`).
+You might now be interested in how much space these kinds of indices take up, or how many documents are in them.
+
+Create a config with a single group:
+
+```yaml
+base_url: "https://our.internal.es.url"
+
+groups:
+- name: integration-alb.access
+  index_patterns:
+  - integration-alb.access-*
+```
+
+When starting the app with the above configuration saved as `esindex_exporter.yaml` in the same directory:
+
+```shell
+$ esindex_exporter
+[2024-11-18T16:55:33Z INFO  esindex_exporter] Updating metrics as per refresh interval (every 60 seconds)
+[2024-11-18T16:55:33Z INFO  prometheus_exporter] exporting metrics to http://127.0.0.1:19100/metrics
+[2024-11-18T16:56:33Z INFO  esindex_exporter] Updating metrics as per refresh interval (every 60 seconds)
+...
+```
+
+Following is the metric-output you'll see if you navigate to <http://127.0.0.1:19100/metrics>:
+
+```plaintext
+# HELP esindex_docs_count_total Total number of documents in group
+# TYPE esindex_docs_count_total gauge
+esindex_docs_count_total{group="integration-alb.access"} 17402137
+# HELP esindex_docs_deleted_total Total number of deleted documents in group
+# TYPE esindex_docs_deleted_total gauge
+esindex_docs_deleted_total{group="integration-alb.access"} 0
+# HELP esindex_grouped_indexes_total Number of indexes in group
+# TYPE esindex_grouped_indexes_total gauge
+esindex_grouped_indexes_total{group="integration-alb.access"} 2
+# HELP esindex_pri_store_bytes Total primary stored size of group in bytes
+# TYPE esindex_pri_store_bytes gauge
+esindex_pri_store_bytes{group="integration-alb.access"} 8434832247
+# HELP esindex_sec_store_bytes Total secondary (all replicas) stored size of group in bytes
+# TYPE esindex_sec_store_bytes gauge
+esindex_sec_store_bytes{group="integration-alb.access"} 2874463118
+# HELP esindex_store_bytes Total stored size of group in bytes
+# TYPE esindex_store_bytes gauge
+esindex_store_bytes{group="integration-alb.access"} 11309295365
+# HELP prometheus_exporter_request_duration_seconds The HTTP request latencies in seconds.
+# TYPE prometheus_exporter_request_duration_seconds histogram
+prometheus_exporter_request_duration_seconds_bucket{le="0.005"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="0.01"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="0.025"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="0.05"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="0.1"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="0.25"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="0.5"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="1"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="2.5"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="5"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="10"} 1
+prometheus_exporter_request_duration_seconds_bucket{le="+Inf"} 1
+prometheus_exporter_request_duration_seconds_sum 0.000002504
+prometheus_exporter_request_duration_seconds_count 1
+# HELP prometheus_exporter_requests_total Number of HTTP requests received.
+# TYPE prometheus_exporter_requests_total counter
+prometheus_exporter_requests_total 1
+```
+
+All metrics prefixed `esindex_` are the metrics gathered for the index-groups you created.
+
+Additionally, the exporter itself also keeps track of some internal metrics (i.e. how well does the exporter perform), which are prefixed with `prometheus_exporter_`.
+
 ## License
 
 esindex_exporter is licensed under the Apache License, Version 2.0, (see [LICENSE](LICENSE) or <https://www.apache.org/licenses/LICENSE-2.0>).
