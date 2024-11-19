@@ -15,6 +15,6 @@ clap = { version = "4.5.21", features = ["derive", "env", "wrap_help"] }
 env_logger = "0.11.5"
 log = "0.4.22"
 prometheus_exporter = { version = "0.8.5", features = ["logging"] }
-reqwest = { version = "0.12.9", features = ["blocking", "json"] }
+reqwest = { version = "0.12.9", default-features = false, features = ["blocking", "json", "rustls-tls"] }
 serde = { version = "1.0.215", features = ["derive"] }
 serde_yaml = "0.9.34"
