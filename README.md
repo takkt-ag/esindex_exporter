@@ -18,7 +18,8 @@ Each metric is labeled with the group name, as the `group` label.
 ## Example
 
 Given you got a series of indices for your application loadbalancers' access logs,
-which are prefixed with the environment name and suffixed with some form of date.
+which are prefixed with the environment name and suffixed with some form of date (`integration-alb.access-2024.11.19`).
+You might now be interested in how much space these kinds of indices take up, or how many documents are in them.
 
 Create a config with a single group:
 
@@ -31,20 +32,17 @@ groups:
   - integration-alb.access-*
 ```
 
-When starting the app with the above configuration saved as `esindex_exporter.yaml` in the CWD:
+When starting the app with the above configuration saved as `esindex_exporter.yaml` in the same directory:
 
 ```shell
-$ cargo run
-   Compiling esindex_exporter v0.1.0 (.../esindex_exporter)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.67s
-     Running `target/debug/esindex_exporter`
+$ esindex_exporter
 [2024-11-18T16:55:33Z INFO  esindex_exporter] Updating metrics as per refresh interval (every 60 seconds)
 [2024-11-18T16:55:33Z INFO  prometheus_exporter] exporting metrics to http://127.0.0.1:19100/metrics
 [2024-11-18T16:56:33Z INFO  esindex_exporter] Updating metrics as per refresh interval (every 60 seconds)
 ...
 ```
 
-This is the metric-output:
+Following is the metric-output you'll see if you navigate to <http://127.0.0.1:19100/metrics>:
 
 ```plaintext
 # HELP esindex_docs_count_total Total number of documents in group
@@ -86,7 +84,9 @@ prometheus_exporter_request_duration_seconds_count 1
 prometheus_exporter_requests_total 1
 ```
 
-The `prometheus_exporter_` prefixed metrics are internal to the exporter, which the library we use provides automatically. The `esindex_` metrics are "ours", as documented in the README.
+All metrics prefixed `esindex_` are the metrics gathered for the index-groups you created.
+
+Additionally, the exporter itself also keeps track of some internal metrics (i.e. how well does the exporter perform), which are prefixed with `prometheus_exporter_`.
 
 ## License
 
