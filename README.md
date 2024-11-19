@@ -15,6 +15,19 @@ The following statistics are gathered:
 
 Each metric is labeled with the group name, as the `group` label.
 
+## Building
+
+To build the project, you need to have Rust installed.
+You can install Rust by following the instructions at <https://www.rust-lang.org/tools/install>.
+
+Once you have Rust installed, you can build the project by running the following command:
+
+```sh
+cargo build --release
+```
+
+The built binary will be available at `target/release/esindex_exporter`.
+
 ## Example
 
 Given you got a series of indices for your application loadbalancers' access logs,
