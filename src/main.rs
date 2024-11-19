@@ -29,6 +29,10 @@ fn main() -> Result<()> {
 
     let cli = cli::Cli::parse();
     let configuration = configuration::Configuration::load_from_yaml_file(cli.config_file)?;
+    if cli.only_lint_config_file {
+        info!("Configuration file is valid");
+        return Ok(());
+    }
 
     let grouped_indexes_total = register_gauge_vec!(
         "esindex_grouped_indexes_total",

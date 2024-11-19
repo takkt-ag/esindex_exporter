@@ -1,0 +1,15 @@
+base_url: "https://domain.invalid"
+
+groups:
+- name: "alb.access"
+  index_patterns:
+  - "alb.access-*"
+- name: "integration-alb.access"
+  index_patterns:
+  - "integration-alb.access-*"
+- name: "preprod-alb.access"
+  index_patterns:
+  - "preprod-alb.access-*"
+- name: "production-alb.access"
+  index_patterns:
+  - "production-alb.access-*"

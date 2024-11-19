@@ -29,4 +29,10 @@ pub(crate) struct Cli {
         env = "ESINDEX_EXPORTER_CONFIG_FILE"
     )]
     pub(crate) config_file: PathBuf,
+    /// Only lint the provided configuration file and exit.
+    ///
+    /// If the configuration is valid, the exit-code will be 0. If the configuration is invalid, the exit-code will be
+    /// non-zero.
+    #[arg(long, default_value = "false")]
+    pub(crate) only_lint_config_file: bool,
 }

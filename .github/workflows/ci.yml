@@ -111,3 +111,8 @@ jobs:
       with:
         command: test
         args: --all --release
+    - name: validate example configuration
+      uses: actions-rs/cargo@v1
+      with:
+        command: run
+        args: -- --config-file esindex_exporter.example.yaml --only-lint-config-file
