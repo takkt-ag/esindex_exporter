@@ -16,7 +16,10 @@
 
 use anyhow::Result;
 use clap::Parser;
-use log::info;
+use log::{
+    info,
+    warn,
+};
 use prometheus_exporter::prometheus::register_gauge_vec;
 
 mod cli;
@@ -65,6 +68,12 @@ fn main() -> Result<()> {
         &["group"],
     )?;
 
+    let ungrouped_indexes_total = register_gauge_vec!(
+        "esindex_ungrouped_indexes_total",
+        "Number of indexes that could not be made part of the group it was requested to be part of",
+        &["group"],
+    )?;
+
     let exporter = prometheus_exporter::start(configuration.bind_addr)?;
     let refresh_interval =
         std::time::Duration::from_secs(configuration.refresh_interval_in_seconds);
@@ -82,27 +91,45 @@ fn main() -> Result<()> {
         );
 
         for group in &configuration.groups {
-            let cat_indices =
-                elasticsearch::cat_indices(&configuration.base_url, &group.index_patterns)?;
+            let (index_groups, ungrouped) =
+                elasticsearch::cat_indices(&configuration.base_url, &group.index_patterns)?
+                    .group(&group.name, group.grouping_regex.as_ref());
 
-            grouped_indexes_total
+            ungrouped_indexes_total
                 .with_label_values(&[&group.name])
-                .set(cat_indices.cat_index_results.len() as f64);
-            store_bytes
-                .with_label_values(&[&group.name])
-                .set(cat_indices.store_size_sum as f64);
-            pri_store_bytes
-                .with_label_values(&[&group.name])
-                .set(cat_indices.pri_store_size_sum as f64);
-            sec_store_bytes
-                .with_label_values(&[&group.name])
-                .set(cat_indices.sec_store_size_sum as f64);
-            docs_count_total
-                .with_label_values(&[&group.name])
-                .set(cat_indices.docs_count_sum as f64);
-            docs_deleted_total
-                .with_label_values(&[&group.name])
-                .set(cat_indices.docs_deleted_sum as f64);
+                .set(ungrouped.len() as f64);
+            if !ungrouped.is_empty() {
+                warn!(
+                    "The following indexes could not be grouped into '{}': {}",
+                    group.name,
+                    ungrouped
+                        .iter()
+                        .map(|i| &*i.index)
+                        .collect::<Vec<_>>()
+                        .join(", ")
+                );
+            }
+
+            for (group_name, cat_indices) in index_groups {
+                grouped_indexes_total
+                    .with_label_values(&[&group_name])
+                    .set(cat_indices.cat_index_results.len() as f64);
+                store_bytes
+                    .with_label_values(&[&group_name])
+                    .set(cat_indices.store_size_sum as f64);
+                pri_store_bytes
+                    .with_label_values(&[&group_name])
+                    .set(cat_indices.pri_store_size_sum as f64);
+                sec_store_bytes
+                    .with_label_values(&[&group_name])
+                    .set(cat_indices.sec_store_size_sum as f64);
+                docs_count_total
+                    .with_label_values(&[&group_name])
+                    .set(cat_indices.docs_count_sum as f64);
+                docs_deleted_total
+                    .with_label_values(&[&group_name])
+                    .set(cat_indices.docs_deleted_sum as f64);
+            }
         }
 
         first_run = false;

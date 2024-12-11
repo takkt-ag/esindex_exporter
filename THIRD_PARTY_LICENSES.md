@@ -4,14 +4,13 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (131)
+- [Apache License 2.0](#Apache-2.0) (130)
 - [MIT License](#MIT) (22)
-- [Unicode License v3](#Unicode-3.0) (19)
+- [Unicode License v3](#Unicode-3.0) (20)
 - [ISC License](#ISC) (4)
 - [BSD 3-Clause &quot;New&quot; or &quot;Revised&quot; License](#BSD-3-Clause) (1)
 - [Mozilla Public License 2.0](#MPL-2.0) (1)
 - [OpenSSL License](#OpenSSL) (1)
-- [Unicode License Agreement - Data Files and Software (2016)](#Unicode-DFS-2016) (1)
 
 ## All license text
 
@@ -656,8 +655,8 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 #### Used by
 
-- [time-macros 0.2.18]( https://github.com/time-rs/time )
-- [time 0.3.36]( https://github.com/time-rs/time )
+- [time-macros 0.2.19]( https://github.com/time-rs/time )
+- [time 0.3.37]( https://github.com/time-rs/time )
 
 <pre>
 
@@ -1309,9 +1308,9 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 #### Used by
 
-- [clap_builder 4.5.21]( https://github.com/clap-rs/clap )
+- [clap_builder 4.5.23]( https://github.com/clap-rs/clap )
 - [clap_derive 4.5.18]( https://github.com/clap-rs/clap )
-- [clap_lex 0.7.3]( https://github.com/clap-rs/clap )
+- [clap_lex 0.7.4]( https://github.com/clap-rs/clap )
 
 <pre>
                                  Apache License
@@ -2159,13 +2158,13 @@ This page lists the licenses of the projects used in esindex_exporter.
 - [anstyle-query 1.1.2]( https://github.com/rust-cli/anstyle.git )
 - [anstyle-wincon 3.0.6]( https://github.com/rust-cli/anstyle.git )
 - [anstyle 1.0.10]( https://github.com/rust-cli/anstyle.git )
-- [clap 4.5.21]( https://github.com/clap-rs/clap )
+- [clap 4.5.23]( https://github.com/clap-rs/clap )
 - [colorchoice 1.0.3]( https://github.com/rust-cli/anstyle.git )
 - [env_filter 0.1.2]( https://github.com/rust-cli/env_logger )
 - [env_logger 0.11.5]( https://github.com/rust-cli/env_logger )
 - [humantime 2.1.0]( https://github.com/tailhook/humantime )
 - [is_terminal_polyfill 1.70.1]( https://github.com/polyfill-rs/is_terminal_polyfill )
-- [terminal_size 0.4.0]( https://github.com/eminence/terminal-size )
+- [terminal_size 0.4.1]( https://github.com/eminence/terminal-size )
 
 <pre>
                                  Apache License
@@ -2805,7 +2804,7 @@ limitations under the License.
 
 #### Used by
 
-- [http 1.1.0]( https://github.com/hyperium/http )
+- [http 1.2.0]( https://github.com/hyperium/http )
 
 <pre>
                               Apache License
@@ -3016,7 +3015,7 @@ limitations under the License.
 
 #### Used by
 
-- [tokio-rustls 0.26.0]( https://github.com/rustls/tokio-rustls )
+- [tokio-rustls 0.26.1]( https://github.com/rustls/tokio-rustls )
 
 <pre>
                               Apache License
@@ -3655,24 +3654,23 @@ limitations under the License.
 - [base64 0.22.1]( https://github.com/marshallpierce/rust-base64 )
 - [bitflags 2.6.0]( https://github.com/bitflags/bitflags )
 - [bumpalo 3.16.0]( https://github.com/fitzgen/bumpalo )
-- [cc 1.2.1]( https://github.com/rust-lang/cc-rs )
+- [cc 1.2.3]( https://github.com/rust-lang/cc-rs )
 - [cfg-if 1.0.0]( https://github.com/alexcrichton/cfg-if )
 - [chunked_transfer 1.5.0]( https://github.com/frewsxcv/rust-chunked-transfer )
 - [displaydoc 0.2.5]( https://github.com/yaahc/displaydoc )
 - [equivalent 1.0.1]( https://github.com/cuviper/equivalent )
-- [errno 0.3.9]( https://github.com/lambda-fairy/rust-errno )
+- [errno 0.3.10]( https://github.com/lambda-fairy/rust-errno )
 - [fnv 1.0.7]( https://github.com/servo/rust-fnv )
 - [form_urlencoded 1.2.1]( https://github.com/servo/rust-url )
 - [gimli 0.31.1]( https://github.com/gimli-rs/gimli )
-- [hashbrown 0.15.1]( https://github.com/rust-lang/hashbrown )
+- [hashbrown 0.15.2]( https://github.com/rust-lang/hashbrown )
 - [heck 0.5.0]( https://github.com/withoutboats/heck )
-- [hermit-abi 0.3.9]( https://github.com/hermit-os/hermit-rs )
 - [httparse 1.9.5]( https://github.com/seanmonstar/httparse )
 - [hyper-rustls 0.27.3]( https://github.com/rustls/hyper-rustls )
 - [idna 1.0.3]( https://github.com/servo/rust-url/ )
 - [idna_adapter 1.2.0]( https://github.com/hsivonen/idna_adapter )
-- [indexmap 2.6.0]( https://github.com/indexmap-rs/indexmap )
-- [js-sys 0.3.72]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys )
+- [indexmap 2.7.0]( https://github.com/indexmap-rs/indexmap )
+- [js-sys 0.3.76]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys )
 - [lazy_static 1.5.0]( https://github.com/rust-lang-nursery/lazy-static.rs )
 - [linux-raw-sys 0.4.14]( https://github.com/sunfishcode/linux-raw-sys )
 - [lock_api 0.4.12]( https://github.com/Amanieu/parking_lot )
@@ -3687,23 +3685,23 @@ limitations under the License.
 - [regex-syntax 0.8.5]( https://github.com/rust-lang/regex/tree/master/regex-syntax )
 - [regex 1.11.1]( https://github.com/rust-lang/regex )
 - [rustc-demangle 0.1.24]( https://github.com/rust-lang/rustc-demangle )
-- [rustix 0.38.41]( https://github.com/bytecodealliance/rustix )
+- [rustix 0.38.42]( https://github.com/bytecodealliance/rustix )
 - [rustls-pemfile 2.2.0]( https://github.com/rustls/pemfile )
-- [rustls 0.23.17]( https://github.com/rustls/rustls )
+- [rustls 0.23.19]( https://github.com/rustls/rustls )
 - [scopeguard 1.2.0]( https://github.com/bluss/scopeguard )
 - [smallvec 1.13.2]( https://github.com/servo/rust-smallvec )
-- [socket2 0.5.7]( https://github.com/rust-lang/socket2 )
+- [socket2 0.5.8]( https://github.com/rust-lang/socket2 )
 - [stable_deref_trait 1.2.0]( https://github.com/storyyeller/stable_deref_trait )
 - [tiny_http 0.10.0]( https://github.com/tiny-http/tiny-http )
-- [url 2.5.3]( https://github.com/servo/rust-url )
+- [url 2.5.4]( https://github.com/servo/rust-url )
 - [wasi 0.11.0+wasi-snapshot-preview1]( https://github.com/bytecodealliance/wasi )
-- [wasm-bindgen-backend 0.2.95]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/backend )
-- [wasm-bindgen-futures 0.4.45]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/futures )
-- [wasm-bindgen-macro-support 0.2.95]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro-support )
-- [wasm-bindgen-macro 0.2.95]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro )
-- [wasm-bindgen-shared 0.2.95]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/shared )
-- [wasm-bindgen 0.2.95]( https://github.com/rustwasm/wasm-bindgen )
-- [web-sys 0.3.72]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys )
+- [wasm-bindgen-backend 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/backend )
+- [wasm-bindgen-futures 0.4.49]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/futures )
+- [wasm-bindgen-macro-support 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro-support )
+- [wasm-bindgen-macro 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro )
+- [wasm-bindgen-shared 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/shared )
+- [wasm-bindgen 0.2.99]( https://github.com/rustwasm/wasm-bindgen )
+- [web-sys 0.3.76]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys )
 
 <pre>
                               Apache License
@@ -4547,25 +4545,25 @@ limitations under the License.
 
 #### Used by
 
-- [anyhow 1.0.93]( https://github.com/dtolnay/anyhow )
-- [itoa 1.0.11]( https://github.com/dtolnay/itoa )
-- [libc 0.2.164]( https://github.com/rust-lang/libc )
+- [anyhow 1.0.94]( https://github.com/dtolnay/anyhow )
+- [itoa 1.0.14]( https://github.com/dtolnay/itoa )
+- [libc 0.2.168]( https://github.com/rust-lang/libc )
 - [miniz_oxide 0.8.0]( https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide )
 - [pin-project-lite 0.2.15]( https://github.com/taiki-e/pin-project-lite )
-- [proc-macro2 1.0.89]( https://github.com/dtolnay/proc-macro2 )
+- [proc-macro2 1.0.92]( https://github.com/dtolnay/proc-macro2 )
 - [quote 1.0.37]( https://github.com/dtolnay/quote )
 - [ryu 1.0.18]( https://github.com/dtolnay/ryu )
-- [serde 1.0.215]( https://github.com/serde-rs/serde )
-- [serde_derive 1.0.215]( https://github.com/serde-rs/serde )
+- [serde 1.0.216]( https://github.com/serde-rs/serde )
+- [serde_derive 1.0.216]( https://github.com/serde-rs/serde )
 - [serde_json 1.0.133]( https://github.com/serde-rs/json )
 - [serde_urlencoded 0.7.1]( https://github.com/nox/serde_urlencoded )
 - [serde_yaml 0.9.34+deprecated]( https://github.com/dtolnay/serde-yaml )
 - [shlex 1.3.0]( https://github.com/comex/rust-shlex )
-- [syn 2.0.87]( https://github.com/dtolnay/syn )
-- [sync_wrapper 1.0.1]( https://github.com/Actyx/sync_wrapper )
+- [syn 2.0.90]( https://github.com/dtolnay/syn )
+- [sync_wrapper 1.0.2]( https://github.com/Actyx/sync_wrapper )
 - [thiserror-impl 1.0.69]( https://github.com/dtolnay/thiserror )
 - [thiserror 1.0.69]( https://github.com/dtolnay/thiserror )
-- [unicode-ident 1.0.13]( https://github.com/dtolnay/unicode-ident )
+- [unicode-ident 1.0.14]( https://github.com/dtolnay/unicode-ident )
 - [utf8parse 0.2.2]( https://github.com/alacritty/vte )
 
 <pre>
@@ -4788,7 +4786,7 @@ pub(super) use verify::{check_name_constraints, GeneralName, NameIterator};
 
 #### Used by
 
-- [mio 1.0.2]( https://github.com/tokio-rs/mio )
+- [mio 1.0.3]( https://github.com/tokio-rs/mio )
 
 <pre>
 Copyright (c) 2014 Carl Lerche and other MIO contributors
@@ -4817,7 +4815,7 @@ THE SOFTWARE.
 
 #### Used by
 
-- [hyper 1.5.0]( https://github.com/hyperium/hyper )
+- [hyper 1.5.1]( https://github.com/hyperium/hyper )
 
 <pre>
 Copyright (c) 2014-2021 Sean McArthur
@@ -4908,7 +4906,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #### Used by
 
-- [bytes 1.8.0]( https://github.com/tokio-rs/bytes )
+- [bytes 1.9.0]( https://github.com/tokio-rs/bytes )
 
 <pre>
 Copyright (c) 2018 Carl Lerche
@@ -5074,8 +5072,8 @@ DEALINGS IN THE SOFTWARE.
 
 #### Used by
 
-- [tracing-core 0.1.32]( https://github.com/tokio-rs/tracing )
-- [tracing 0.1.40]( https://github.com/tokio-rs/tracing )
+- [tracing-core 0.1.33]( https://github.com/tokio-rs/tracing )
+- [tracing 0.1.41]( https://github.com/tokio-rs/tracing )
 
 <pre>
 Copyright (c) 2019 Tokio Contributors
@@ -5226,7 +5224,7 @@ THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRES
 
 #### Used by
 
-- [tokio 1.41.1]( https://github.com/tokio-rs/tokio )
+- [tokio 1.42.0]( https://github.com/tokio-rs/tokio )
 
 <pre>
 MIT License
@@ -5416,7 +5414,7 @@ SOFTWARE.
 
 #### Used by
 
-- [webpki-roots 0.26.6]( https://github.com/rustls/webpki-roots )
+- [webpki-roots 0.26.7]( https://github.com/rustls/webpki-roots )
 
 <pre>
 Mozilla Public License Version 2.0
@@ -5861,6 +5859,55 @@ Exhibit B - &quot;Incompatible With Secondary Licenses&quot; Notice
 
 #### Used by
 
+- [unicode-ident 1.0.14]( https://github.com/dtolnay/unicode-ident )
+
+<pre>
+UNICODE LICENSE V3
+
+COPYRIGHT AND PERMISSION NOTICE
+
+Copyright © 1991-2023 Unicode, Inc.
+
+NOTICE TO USER: Carefully read the following legal agreement. BY
+DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING DATA FILES, AND/OR
+SOFTWARE, YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE
+TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT
+DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of data files and any associated documentation (the &quot;Data Files&quot;) or
+software and any associated documentation (the &quot;Software&quot;) to deal in the
+Data Files or Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, and/or sell
+copies of the Data Files or Software, and to permit persons to whom the
+Data Files or Software are furnished to do so, provided that either (a)
+this copyright and permission notice appear with all copies of the Data
+Files or Software, or (b) this copyright and permission notice appear in
+associated Documentation.
+
+THE DATA FILES AND SOFTWARE ARE PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF
+THIRD PARTY RIGHTS.
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE
+BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES,
+OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE DATA
+FILES OR SOFTWARE.
+
+Except as contained in this notice, the name of a copyright holder shall
+not be used in advertising or otherwise to promote the sale, use or other
+dealings in these Data Files or Software without prior written
+authorization of the copyright holder.
+
+</pre>
+
+### <a name="Unicode-3.0"></a>Unicode License v3
+
+#### Used by
+
 - [icu_collections 1.5.0]( https://github.com/unicode-org/icu4x )
 - [icu_locid 1.5.0]( https://github.com/unicode-org/icu4x )
 - [icu_locid_transform 1.5.0]( https://github.com/unicode-org/icu4x )
@@ -5871,13 +5918,13 @@ Exhibit B - &quot;Incompatible With Secondary Licenses&quot; Notice
 - [icu_properties_data 1.5.0]( https://github.com/unicode-org/icu4x )
 - [icu_provider 1.5.0]( https://github.com/unicode-org/icu4x )
 - [icu_provider_macros 1.5.0]( https://github.com/unicode-org/icu4x )
-- [litemap 0.7.3]( https://github.com/unicode-org/icu4x )
+- [litemap 0.7.4]( https://github.com/unicode-org/icu4x )
 - [tinystr 0.7.6]( https://github.com/unicode-org/icu4x )
 - [writeable 0.5.5]( https://github.com/unicode-org/icu4x )
-- [yoke-derive 0.7.4]( https://github.com/unicode-org/icu4x )
-- [yoke 0.7.4]( https://github.com/unicode-org/icu4x )
-- [zerofrom-derive 0.1.4]( https://github.com/unicode-org/icu4x )
-- [zerofrom 0.1.4]( https://github.com/unicode-org/icu4x )
+- [yoke-derive 0.7.5]( https://github.com/unicode-org/icu4x )
+- [yoke 0.7.5]( https://github.com/unicode-org/icu4x )
+- [zerofrom-derive 0.1.5]( https://github.com/unicode-org/icu4x )
+- [zerofrom 0.1.5]( https://github.com/unicode-org/icu4x )
 - [zerovec-derive 0.10.3]( https://github.com/unicode-org/icu4x )
 - [zerovec 0.10.4]( https://github.com/unicode-org/icu4x )
 
@@ -5928,38 +5975,6 @@ SPDX-License-Identifier: Unicode-3.0
 
 Portions of ICU4X may have been adapted from ICU4C and/or ICU4J.
 ICU 1.8.1 to ICU 57.1 © 1995-2016 International Business Machines Corporation and others.
-
-</pre>
-
-### <a name="Unicode-DFS-2016"></a>Unicode License Agreement - Data Files and Software (2016)
-
-#### Used by
-
-- [unicode-ident 1.0.13]( https://github.com/dtolnay/unicode-ident )
-
-<pre>
-UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
-
-Unicode Data Files include all data files under the directories http://www.unicode.org/Public/, http://www.unicode.org/reports/, http://www.unicode.org/cldr/data/, http://source.icu-project.org/repos/icu/, and http://www.unicode.org/utility/trac/browser/.
-
-Unicode Data Files do not include PDF online code charts under the directory http://www.unicode.org/Public/.
-
-Software includes any source code published in the Unicode Standard or under the directories http://www.unicode.org/Public/, http://www.unicode.org/reports/, http://www.unicode.org/cldr/data/, http://source.icu-project.org/repos/icu/, and http://www.unicode.org/utility/trac/browser/.
-
-NOTICE TO USER: Carefully read the following legal agreement. BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.&#x27;S DATA FILES (&quot;DATA FILES&quot;), AND/OR SOFTWARE (&quot;SOFTWARE&quot;), YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.
-
-COPYRIGHT AND PERMISSION NOTICE
-
-Copyright © 1991-2016 Unicode, Inc. All rights reserved. Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of the Unicode data files and any associated documentation (the &quot;Data Files&quot;) or Unicode software and any associated documentation (the &quot;Software&quot;) to deal in the Data Files or Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies of the Data Files or Software, and to permit persons to whom the Data Files or Software are furnished to do so, provided that either
-
-     (a) this copyright and permission notice appear with all copies of the Data Files or Software, or
-     (b) this copyright and permission notice appear in associated Documentation.
-
-THE DATA FILES AND SOFTWARE ARE PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE DATA FILES OR SOFTWARE.
-
-Except as contained in this notice, the name of a copyright holder shall not be used in advertising or otherwise to promote the sale, use or other dealings in these Data Files or Software without prior written authorization of the copyright holder.
 
 </pre>
 

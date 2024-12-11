@@ -64,6 +64,26 @@ impl Configuration {
 #[derive(Debug, Deserialize)]
 pub(crate) struct Group {
     /// The name of the group which will be present as the `group` label in the metrics.
+    ///
+    /// ## Regex grouping
+    ///
+    /// If you also provide a grouping-regex, you can use backreferences to the capturing groups in the regex to create
+    /// the group name.
+    ///
+    /// For example, if you have an indexes like `integration-alb.access-YYYY.MM` and `preprod-alb.access-YYYY.MM` and
+    /// you want to create groups dynamically across the environment, you could provide a configuration like this:
+    ///
+    /// ```yaml
+    /// groups:
+    /// - name: '${environment}-alb.access'
+    ///   index_patterns:
+    ///   - '*-alb.access-*'
+    ///   grouping_regex: '^(?<environment>[^-]+)-alb\.access'
+    /// ```
+    ///
+    /// If you provide an index pattern where indexes don't match the grouping-regex, the indices that don't match will
+    /// be ignored and not show up in the metrics. The `esindex_ungrouped_indexes_total` metric will show the count of
+    /// such indexes, with the `group` label set to the name of the group
     pub(crate) name: String,
     /// The index patterns to monitor as part of this group.
     ///
@@ -73,4 +93,10 @@ pub(crate) struct Group {
     ///
     /// [mts]: https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#api-multi-index
     pub(crate) index_patterns: Vec<String>,
+    /// An optional regex whose capturing groups can be used to create the group name dynamically.
+    #[serde(
+        default,
+        deserialize_with = "crate::de::deserialize_optional_string_as_regex"
+    )]
+    pub(crate) grouping_regex: Option<regex::Regex>,
 }

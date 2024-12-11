@@ -16,6 +16,7 @@
 
 use anyhow::Result;
 use serde::Deserialize;
+use std::collections::HashMap;
 
 pub(crate) struct CatIndices {
     pub(crate) cat_index_results: Vec<CatIndexResult>,
@@ -51,10 +52,51 @@ impl CatIndices {
             sec_store_size_sum,
         }
     }
+
+    pub(crate) fn group(
+        self,
+        name: &str,
+        grouping_regex: Option<&regex::Regex>,
+    ) -> (HashMap<String, CatIndices>, Vec<CatIndexResult>) {
+        if let Some(grouping_regex) = grouping_regex {
+            let mut grouped: HashMap<String, Vec<CatIndexResult>> = HashMap::new();
+            let mut ungrouped = vec![];
+
+            for cat_index_result in self.cat_index_results {
+                let captures = match grouping_regex.captures(&cat_index_result.index) {
+                    Some(captures) => captures,
+                    None => {
+                        ungrouped.push(cat_index_result);
+                        continue;
+                    }
+                };
+
+                let mut group_name = String::new();
+                captures.expand(name, &mut group_name);
+                grouped
+                    .entry(group_name)
+                    .or_default()
+                    .push(cat_index_result);
+            }
+
+            return (
+                grouped
+                    .into_iter()
+                    .map(|(key, cat_index_results)| (key, Self::new(cat_index_results)))
+                    .collect(),
+                ungrouped,
+            );
+        }
+
+        let mut grouped = HashMap::new();
+        grouped.insert(name.to_string(), self);
+        (grouped, vec![])
+    }
 }
 
 #[derive(Debug, Deserialize)]
 pub(crate) struct CatIndexResult {
+    pub(crate) index: String,
     #[serde(
         rename = "docs.count",
         deserialize_with = "crate::de::deserialize_string_as_number"

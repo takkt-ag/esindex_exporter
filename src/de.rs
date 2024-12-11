@@ -26,3 +26,19 @@ where
     let s = String::deserialize(deserializer)?;
     T::from_str(&s).map_err(serde::de::Error::custom)
 }
+
+/// Deserialize an optional string as a regex.
+pub(crate) fn deserialize_optional_string_as_regex<'de, D>(
+    deserializer: D,
+) -> Result<Option<regex::Regex>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let s = Option::<String>::deserialize(deserializer)?;
+    match s {
+        Some(s) => regex::Regex::new(&s)
+            .map(Some)
+            .map_err(serde::de::Error::custom),
+        None => Ok(None),
+    }
+}

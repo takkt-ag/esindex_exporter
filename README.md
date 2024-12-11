@@ -4,14 +4,15 @@ This is a very simple Prometheus exporter, used for gathering metrics about grou
 
 The following statistics are gathered:
 
-| Metric                          | Description                                                  |
-|---------------------------------|--------------------------------------------------------------|
-| `esindex_grouped_indexes_total` | Number of indexes in group                                   |
-| `esindex_store_bytes`           | Total stored size of group in bytes                          |
-| `esindex_pri_store_bytes`       | Total primary stored size of group in bytes                  |
-| `esindex_sec_store_bytes`       | Total secondary (all replicas) stored size of group in bytes |
-| `esindex_docs_count_total`      | Total number of documents in group                           |
-| `esindex_docs_deleted_total`    | Total number of deleted documents in group                   |
+| Metric                            | Description                                                                               |
+|-----------------------------------|-------------------------------------------------------------------------------------------|
+| `esindex_grouped_indexes_total`   | Number of indexes in group                                                                |
+| `esindex_store_bytes`             | Total stored size of group in bytes                                                       |
+| `esindex_pri_store_bytes`         | Total primary stored size of group in bytes                                               |
+| `esindex_sec_store_bytes`         | Total secondary (all replicas) stored size of group in bytes                              |
+| `esindex_docs_count_total`        | Total number of documents in group                                                        |
+| `esindex_docs_deleted_total`      | Total number of deleted documents in group                                                |
+| `esindex_ungrouped_indexes_total` | Number of indexes that could not be made part of the group it was requested to be part of |
 
 Each metric is labeled with the group name, as the `group` label.
 
