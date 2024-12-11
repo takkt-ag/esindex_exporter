@@ -4,12 +4,7 @@ groups:
 - name: "alb.access"
   index_patterns:
   - "alb.access-*"
-- name: "integration-alb.access"
+- name: "${environment}-alb.access"
   index_patterns:
-  - "integration-alb.access-*"
-- name: "preprod-alb.access"
-  index_patterns:
-  - "preprod-alb.access-*"
-- name: "production-alb.access"
-  index_patterns:
-  - "production-alb.access-*"
+  - "*-alb.access-*"
+  grouping_regex: '^(?<environment>[^-]+)-alb.access-.*$'

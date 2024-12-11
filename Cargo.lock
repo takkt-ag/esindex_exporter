@@ -280,6 +280,7 @@ dependencies = [
  "env_logger",
  "log",
  "prometheus_exporter",
+ "regex",
  "reqwest",
  "serde",
  "serde_yaml",
