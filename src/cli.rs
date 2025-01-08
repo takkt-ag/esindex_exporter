@@ -35,4 +35,9 @@ pub(crate) struct Cli {
     /// non-zero.
     #[arg(long, default_value = "false")]
     pub(crate) only_lint_config_file: bool,
+    /// Extract the results according to the provided configuration once and print them as JSON, then exit.
+    ///
+    /// This flag is particularly helpful if you want to test your configuration.
+    #[arg(long, default_value = "false")]
+    pub(crate) print_once_as_json: bool,
 }

@@ -102,6 +102,28 @@ All metrics prefixed `esindex_` are the metrics gathered for the index-groups yo
 
 Additionally, the exporter itself also keeps track of some internal metrics (i.e. how well does the exporter perform), which are prefixed with `prometheus_exporter_`.
 
+If you want to test your configuration without having to navigate to the metric-endpoint, you can provide the `--print-once-as-json` flag on startup.
+This changes the exporter's behavior to not run a server, but instead print the metrics of each group as a JSON-object to stdout:
+
+```shell
+$ esindex_exporter --print-once-as-json
+{"group_name":"integration-alb.access","grouped_indexes_total":2,"store_bytes":11309295365,"pri_store_bytes":8434832247,"sec_store_bytes":2874463118,"docs_count_total":17402137,"docs_deleted_total":0}
+...
+[2025-01-08T15:32:09Z INFO  esindex_exporter] Printed metrics once as JSON, exiting
+```
+
+You can then also use this for further processing, e.g. getting the top 5 groups by stored bytes, formatted in columns:
+
+```shell
+$ esindex_exporter --print-once-as-json | jq -s 'sort_by(.store_bytes) | reverse | .[:5] | [.[]| with_entries(.key |= ascii_downcase) ] | (.[0] | keys_unsorted | @tsv), (.[]  | map(.) | @tsv)' | column -t
+group_name                       grouped_indexes_total  store_bytes  pri_store_bytes  sec_store_bytes  docs_count_total  docs_deleted_total
+production-alb.access            43                     1230722      1209647          21075            2077388733        0
+preprod-alb.access               43                     226973       223434           3538             560098066         0
+production-some.application      44                     156548       153886           2661             532177108         0
+services-docker.container        1                      71073        35544            35529            80021704          0
+integration-alb.access           43                     54157        53097            1059             71242321          68
+```
+
 ## License
 
 esindex_exporter is licensed under the Apache License, Version 2.0, (see [LICENSE](LICENSE) or <https://www.apache.org/licenses/LICENSE-2.0>).

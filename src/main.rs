@@ -74,21 +74,26 @@ fn main() -> Result<()> {
         &["group"],
     )?;
 
-    let exporter = prometheus_exporter::start(configuration.bind_addr)?;
+    let exporter = if cli.print_once_as_json {
+        None
+    } else {
+        Some(prometheus_exporter::start(configuration.bind_addr)?)
+    };
     let refresh_interval =
         std::time::Duration::from_secs(configuration.refresh_interval_in_seconds);
 
     let mut first_run = true;
     loop {
-        let _guard = if first_run {
-            None
-        } else {
-            Some(exporter.wait_duration(refresh_interval))
+        let _guard = match (first_run, &exporter) {
+            (false, Some(exporter)) => {
+                info!(
+                    "Updating metrics as per refresh interval (every {} seconds)",
+                    configuration.refresh_interval_in_seconds
+                );
+                Some(exporter.wait_duration(refresh_interval))
+            }
+            _ => None,
         };
-        info!(
-            "Updating metrics as per refresh interval (every {} seconds)",
-            configuration.refresh_interval_in_seconds
-        );
 
         for group in &configuration.groups {
             let (index_groups, ungrouped) =
@@ -129,9 +134,29 @@ fn main() -> Result<()> {
                 docs_deleted_total
                     .with_label_values(&[&group_name])
                     .set(cat_indices.docs_deleted_sum as f64);
+
+                if cli.print_once_as_json {
+                    println!(
+                        r#"{{"group_name":"{}","grouped_indexes_total":{},"store_bytes":{},"pri_store_bytes":{},"sec_store_bytes":{},"docs_count_total":{},"docs_deleted_total":{}}}"#,
+                        group_name,
+                        cat_indices.cat_index_results.len(),
+                        cat_indices.store_size_sum / 1000 / 1000,
+                        cat_indices.pri_store_size_sum / 1000 / 1000,
+                        cat_indices.sec_store_size_sum / 1000 / 1000,
+                        cat_indices.docs_count_sum,
+                        cat_indices.docs_deleted_sum,
+                    );
+                }
             }
         }
 
         first_run = false;
+
+        if exporter.is_none() {
+            info!("Printed metrics once as JSON, exiting");
+            break;
+        }
     }
+
+    Ok(())
 }
