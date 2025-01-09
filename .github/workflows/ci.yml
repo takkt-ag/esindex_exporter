@@ -116,6 +116,9 @@ jobs:
       with:
         command: run
         args: --release -- --config-file esindex_exporter.example.yaml --only-lint-config-file
+    - name: validate example configuration provided as base64 through an environment variable
+      run:
+        env ESINDEX_EXPORTER_CONFIG_FILE="$(cat esindex_exporter.example.yaml | base64 -w0)" cargo run --release -- --only-lint-config-file
 
   build-docker-image:
     permissions:

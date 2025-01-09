@@ -19,13 +19,10 @@ use anyhow::{
     Result,
 };
 use serde::Deserialize;
-use std::{
-    net::{
-        IpAddr,
-        Ipv4Addr,
-        SocketAddr,
-    },
-    path::Path,
+use std::net::{
+    IpAddr,
+    Ipv4Addr,
+    SocketAddr,
 };
 
 /// The configuration of the exporter.
@@ -46,9 +43,8 @@ pub(crate) struct Configuration {
 
 impl Configuration {
     /// Load the configuration from a YAML-file.
-    pub(crate) fn load_from_yaml_file<P: AsRef<Path>>(path: P) -> Result<Self> {
-        serde_yaml::from_reader(std::fs::File::open(path)?)
-            .context("Failed to parse the configuration file")
+    pub(crate) fn load_yaml(reader: impl std::io::Read) -> Result<Self> {
+        serde_yaml::from_reader(reader).context("Failed to parse the configuration file")
     }
 
     fn default_bind_addr() -> SocketAddr {

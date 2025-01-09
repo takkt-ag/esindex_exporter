@@ -31,7 +31,7 @@ fn main() -> Result<()> {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
 
     let cli = cli::Cli::parse();
-    let configuration = configuration::Configuration::load_from_yaml_file(cli.config_file)?;
+    let configuration = configuration::Configuration::load_yaml(cli.config_file.reader()?)?;
     if cli.only_lint_config_file {
         info!("Configuration file is valid");
         return Ok(());
