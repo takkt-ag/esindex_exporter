@@ -132,7 +132,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
     - name: Docker meta
       id: meta
-      uses: docker/metadata-action@v4
+      uses: docker/metadata-action@v5
       with:
         images: ghcr.io/takkt-ag/esindex_exporter
     - name: Login to GitHub Container Registry
