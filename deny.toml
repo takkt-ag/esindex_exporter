@@ -5,7 +5,6 @@ allow = [
     "BSD-3-Clause",
     "ISC",
     "MIT",
-    "MPL-2.0",
     "Unicode-3.0",
 ]
 
@@ -13,6 +12,13 @@ exceptions = [
     # ring uses code from multiple libraries but all with permissive licenses
     # https://tldrlegal.com/license/openssl-license-(openssl)
     { allow = ["ISC", "MIT", "OpenSSL"], name = "ring" },
+
+    # MPL-2.0 is a copyleft license, but we can still fulfill its requirements if:
+    # - We include a copyright notice (which we do through `THIRD_PARTY_LICENSES.md`)
+    # - We include the full license (which we do through `THIRD_PARTY_LICENSES.md`)
+    # - We disclose source-code (which we do, since this tool is open-source)
+    # - We include instructions to obtain the source (which we do through `THIRD_PARTY_LICENSES.md`)
+    { allow = ["MPL-2.0"], crate = "webpki-roots"},
 ]
 
 [[licenses.clarify]]
