@@ -4,7 +4,7 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (130)
+- [Apache License 2.0](#Apache-2.0) (131)
 - [MIT License](#MIT) (24)
 - [Unicode License v3](#Unicode-3.0) (20)
 - [ISC License](#ISC) (4)
@@ -1308,7 +1308,7 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 #### Used by
 
-- [clap_builder 4.5.24]( https://github.com/clap-rs/clap )
+- [clap_builder 4.5.27]( https://github.com/clap-rs/clap )
 - [clap_derive 4.5.24]( https://github.com/clap-rs/clap )
 - [clap_lex 0.7.4]( https://github.com/clap-rs/clap )
 
@@ -1521,7 +1521,7 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 #### Used by
 
-- [ipnet 2.10.1]( https://github.com/krisprice/ipnet )
+- [ipnet 2.11.0]( https://github.com/krisprice/ipnet )
 
 <pre>
                                  Apache License
@@ -2156,9 +2156,9 @@ This page lists the licenses of the projects used in esindex_exporter.
 
 - [anstream 0.6.18]( https://github.com/rust-cli/anstyle.git )
 - [anstyle-query 1.1.2]( https://github.com/rust-cli/anstyle.git )
-- [anstyle-wincon 3.0.6]( https://github.com/rust-cli/anstyle.git )
+- [anstyle-wincon 3.0.7]( https://github.com/rust-cli/anstyle.git )
 - [anstyle 1.0.10]( https://github.com/rust-cli/anstyle.git )
-- [clap 4.5.24]( https://github.com/clap-rs/clap )
+- [clap 4.5.27]( https://github.com/clap-rs/clap )
 - [colorchoice 1.0.3]( https://github.com/rust-cli/anstyle.git )
 - [env_filter 0.1.3]( https://github.com/rust-cli/env_logger )
 - [env_logger 0.11.6]( https://github.com/rust-cli/env_logger )
@@ -3652,9 +3652,9 @@ limitations under the License.
 - [autocfg 1.4.0]( https://github.com/cuviper/autocfg )
 - [backtrace 0.3.74]( https://github.com/rust-lang/backtrace-rs )
 - [base64 0.22.1]( https://github.com/marshallpierce/rust-base64 )
-- [bitflags 2.6.0]( https://github.com/bitflags/bitflags )
+- [bitflags 2.8.0]( https://github.com/bitflags/bitflags )
 - [bumpalo 3.16.0]( https://github.com/fitzgen/bumpalo )
-- [cc 1.2.7]( https://github.com/rust-lang/cc-rs )
+- [cc 1.2.10]( https://github.com/rust-lang/cc-rs )
 - [cfg-if 1.0.0]( https://github.com/alexcrichton/cfg-if )
 - [chunked_transfer 1.5.0]( https://github.com/frewsxcv/rust-chunked-transfer )
 - [displaydoc 0.2.5]( https://github.com/yaahc/displaydoc )
@@ -3669,12 +3669,12 @@ limitations under the License.
 - [hyper-rustls 0.27.5]( https://github.com/rustls/hyper-rustls )
 - [idna 1.0.3]( https://github.com/servo/rust-url/ )
 - [idna_adapter 1.2.0]( https://github.com/hsivonen/idna_adapter )
-- [indexmap 2.7.0]( https://github.com/indexmap-rs/indexmap )
-- [js-sys 0.3.76]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys )
+- [indexmap 2.7.1]( https://github.com/indexmap-rs/indexmap )
+- [js-sys 0.3.77]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys )
 - [lazy_static 1.5.0]( https://github.com/rust-lang-nursery/lazy-static.rs )
 - [linux-raw-sys 0.4.15]( https://github.com/sunfishcode/linux-raw-sys )
 - [lock_api 0.4.12]( https://github.com/Amanieu/parking_lot )
-- [log 0.4.22]( https://github.com/rust-lang/log )
+- [log 0.4.25]( https://github.com/rust-lang/log )
 - [mime 0.3.17]( https://github.com/hyperium/mime )
 - [object 0.36.7]( https://github.com/gimli-rs/object )
 - [once_cell 1.20.2]( https://github.com/matklad/once_cell )
@@ -3685,9 +3685,9 @@ limitations under the License.
 - [regex-syntax 0.8.5]( https://github.com/rust-lang/regex/tree/master/regex-syntax )
 - [regex 1.11.1]( https://github.com/rust-lang/regex )
 - [rustc-demangle 0.1.24]( https://github.com/rust-lang/rustc-demangle )
-- [rustix 0.38.43]( https://github.com/bytecodealliance/rustix )
+- [rustix 0.38.44]( https://github.com/bytecodealliance/rustix )
 - [rustls-pemfile 2.2.0]( https://github.com/rustls/pemfile )
-- [rustls 0.23.20]( https://github.com/rustls/rustls )
+- [rustls 0.23.21]( https://github.com/rustls/rustls )
 - [scopeguard 1.2.0]( https://github.com/bluss/scopeguard )
 - [smallvec 1.13.2]( https://github.com/servo/rust-smallvec )
 - [socket2 0.5.8]( https://github.com/rust-lang/socket2 )
@@ -3695,13 +3695,13 @@ limitations under the License.
 - [tiny_http 0.10.0]( https://github.com/tiny-http/tiny-http )
 - [url 2.5.4]( https://github.com/servo/rust-url )
 - [wasi 0.11.0+wasi-snapshot-preview1]( https://github.com/bytecodealliance/wasi )
-- [wasm-bindgen-backend 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/backend )
-- [wasm-bindgen-futures 0.4.49]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/futures )
-- [wasm-bindgen-macro-support 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro-support )
-- [wasm-bindgen-macro 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro )
-- [wasm-bindgen-shared 0.2.99]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/shared )
-- [wasm-bindgen 0.2.99]( https://github.com/rustwasm/wasm-bindgen )
-- [web-sys 0.3.76]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys )
+- [wasm-bindgen-backend 0.2.100]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/backend )
+- [wasm-bindgen-futures 0.4.50]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/futures )
+- [wasm-bindgen-macro-support 0.2.100]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro-support )
+- [wasm-bindgen-macro 0.2.100]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro )
+- [wasm-bindgen-shared 0.2.100]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/shared )
+- [wasm-bindgen 0.2.100]( https://github.com/rustwasm/wasm-bindgen )
+- [web-sys 0.3.77]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys )
 
 <pre>
                               Apache License
@@ -4548,22 +4548,23 @@ limitations under the License.
 - [anyhow 1.0.95]( https://github.com/dtolnay/anyhow )
 - [itoa 1.0.14]( https://github.com/dtolnay/itoa )
 - [libc 0.2.169]( https://github.com/rust-lang/libc )
-- [miniz_oxide 0.8.2]( https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide )
+- [miniz_oxide 0.8.3]( https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide )
 - [pin-project-lite 0.2.16]( https://github.com/taiki-e/pin-project-lite )
-- [proc-macro2 1.0.92]( https://github.com/dtolnay/proc-macro2 )
+- [proc-macro2 1.0.93]( https://github.com/dtolnay/proc-macro2 )
 - [quote 1.0.38]( https://github.com/dtolnay/quote )
+- [rustversion 1.0.19]( https://github.com/dtolnay/rustversion )
 - [ryu 1.0.18]( https://github.com/dtolnay/ryu )
 - [serde 1.0.217]( https://github.com/serde-rs/serde )
 - [serde_derive 1.0.217]( https://github.com/serde-rs/serde )
-- [serde_json 1.0.135]( https://github.com/serde-rs/json )
+- [serde_json 1.0.137]( https://github.com/serde-rs/json )
 - [serde_urlencoded 0.7.1]( https://github.com/nox/serde_urlencoded )
 - [serde_yaml 0.9.34+deprecated]( https://github.com/dtolnay/serde-yaml )
 - [shlex 1.3.0]( https://github.com/comex/rust-shlex )
-- [syn 2.0.95]( https://github.com/dtolnay/syn )
+- [syn 2.0.96]( https://github.com/dtolnay/syn )
 - [sync_wrapper 1.0.2]( https://github.com/Actyx/sync_wrapper )
 - [thiserror-impl 1.0.69]( https://github.com/dtolnay/thiserror )
 - [thiserror 1.0.69]( https://github.com/dtolnay/thiserror )
-- [unicode-ident 1.0.14]( https://github.com/dtolnay/unicode-ident )
+- [unicode-ident 1.0.15]( https://github.com/dtolnay/unicode-ident )
 - [utf8parse 0.2.2]( https://github.com/alacritty/vte )
 
 <pre>
@@ -5226,7 +5227,7 @@ THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRES
 
 #### Used by
 
-- [tokio 1.42.0]( https://github.com/tokio-rs/tokio )
+- [tokio 1.43.0]( https://github.com/tokio-rs/tokio )
 
 <pre>
 MIT License
@@ -5861,7 +5862,7 @@ Exhibit B - &quot;Incompatible With Secondary Licenses&quot; Notice
 
 #### Used by
 
-- [unicode-ident 1.0.14]( https://github.com/dtolnay/unicode-ident )
+- [unicode-ident 1.0.15]( https://github.com/dtolnay/unicode-ident )
 
 <pre>
 UNICODE LICENSE V3
