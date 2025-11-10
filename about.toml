@@ -12,4 +12,4 @@ no-clearly-defined = true
 accepted = ["OpenSSL"]
 
 [webpki-roots]
-accepted = ["MPL-2.0"]
+accepted = ["CDLA-Permissive-2.0"]
